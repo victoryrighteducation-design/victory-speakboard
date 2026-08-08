@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Staff Dashboard — SpeakBoard</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand"><span class="badge"></span> SpeakBoard <span class="muted" style="color:#E8C766; font-weight:400; font-size:0.9rem;">· Staff</span></div>
+  <div class="actions">
+    <span id="staff-name" class="muted" style="color:#E8C766;"></span>
+    <button id="logout-btn">Log out</button>
+  </div>
+</div>
+
+<div class="page">
+
+  <h1 class="display">Pending student approvals</h1>
+  <div id="pending-list" class="grid" style="margin-bottom:32px;"></div>
+
+  <h1 class="display">All students</h1>
+  <div id="all-students" class="card"></div>
+
+  <h1 class="display" style="margin-top:36px;">Task editor</h1>
+  <p class="muted">Edit the prompt and scoring guidance for each task. Changes apply immediately — no redeploy needed.</p>
+  <div class="grid grid-2" id="task-editors"></div>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/staff.js"></script>
+</body>
+</html>
