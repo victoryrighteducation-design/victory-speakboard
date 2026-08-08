@@ -1,0 +1,22 @@
+{
+  "rules": {
+    "usernames": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "users": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "students": {
+      "$uid": {
+        ".read": "auth != null && (auth.uid == $uid || root.child('students').child(auth.uid).child('role').val() == 'staff')",
+        ".write": "auth != null && (auth.uid == $uid || root.child('students').child(auth.uid).child('role').val() == 'staff')"
+      }
+    },
+    "taskConfig": {
+      ".read": "auth != null",
+      ".write": "auth != null && root.child('students').child(auth.uid).child('role').val() == 'staff'"
+    }
+  }
+}
