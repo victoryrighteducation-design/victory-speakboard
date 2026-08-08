@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Practice — SpeakBoard</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand"><span class="badge"></span> SpeakBoard</div>
+  <div class="actions">
+    <span id="student-name" class="muted" style="color:#E8C766;"></span>
+    <button id="logout-btn">Log out</button>
+  </div>
+</div>
+
+<div class="page">
+
+  <div id="task-list-view">
+    <h1 class="display">Choose a task</h1>
+    <p class="muted">Pick a module below and record your response. You'll get an instant AI score and feedback.</p>
+    <div class="grid grid-2" id="task-tiles"></div>
+  </div>
+
+  <div id="active-task-view" class="hidden">
+    <button class="btn-outline btn" id="back-to-list" style="margin-bottom:16px;">&larr; Back to tasks</button>
+    <div class="card">
+      <span class="eyebrow" id="active-task-type"></span>
+      <h2 class="display" id="active-task-title"></h2>
+      <p id="active-task-prompt" style="font-size:1.05rem; line-height:1.6;"></p>
+
+      <div class="record-panel">
+        <button class="mic-btn" id="mic-btn">🎤</button>
+        <p class="muted" id="record-status" style="margin-top:10px;">Tap to start recording</p>
+        <div class="transcript-box" id="transcript-box">Your speech will appear here as you talk…</div>
+        <button class="btn btn-gold" id="submit-btn" style="margin-top:18px;" disabled>Submit for scoring</button>
+      </div>
+
+      <div id="feedback-area"></div>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/student.js"></script>
+</body>
+</html>
